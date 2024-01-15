@@ -1,0 +1,47 @@
+import React from 'react';
+
+// Komponent Note
+const Note = ({ id, title, description }) => {
+  // Dodaj dowolne style do komponentu Note
+  const noteStyle = {
+    border: '1px solid #ccc',
+    padding: '10px',
+    marginBottom: '10px',
+  };
+
+  return (
+    <div style={noteStyle}>
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </div>
+  );
+};
+
+// Komponent NoteList
+const NoteList = () => {
+  // Tablica obiektów
+  const notes = [
+    { id: 1, title: 'Note 1', description: 'Description 1' },
+    { id: 2, title: 'Note 2', description: 'Description 2' },
+    { id: 3, title: 'Note 3', description: 'Description 3' },
+  ];
+
+  // Dodaj dowolne style do komponentu NoteList
+  const noteListStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  };
+
+  return (
+    <div style={noteListStyle}>
+      {/* Wywołaj funkcję map na tablicy obiektów */}
+      {notes.map((note) => (
+        // Przekaż propsy title oraz description do komponentu Note
+        <Note key={note.id} title={note.title} description={note.description} />
+      ))}
+    </div>
+  );
+};
+
+export default NoteList;
