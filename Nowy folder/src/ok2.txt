@@ -1,0 +1,19 @@
+import React, { useState } from 'react';
+import './ChristmasBauble.css';
+
+const ChristmasBauble = () => {
+  const [color, setColor] = useState('red'); 
+
+  const changeColor = () => {
+    const newColor = color === 'red' ? 'green' : 'red'; 
+    setColor(newColor);
+  };
+
+  return (
+    <div className="bauble" style={{ backgroundColor: color }} onClick={changeColor}>
+      <p className="star">&#9733;</p>
+    </div>
+  );
+};
+
+export default ChristmasBauble;
